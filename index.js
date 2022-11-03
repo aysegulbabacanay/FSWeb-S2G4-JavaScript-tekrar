@@ -52,7 +52,7 @@ console.log(CemberinCevresi(5))
 			3. Çemberin alanı hesaplanacaktır (💡 İPUCU: Çemberin alanı = pi * yarıçapın karesi, yarıçapın karesini bulmak için Javascript içinde tanımlı Math kütüphanesini kullanabilirsiniz. Math.pow(yaricap,2))
 			4. Hesaplanan çemberin alanı döndürülecektir.
 		*/
-		
+	
 function CemberinAlani(yaricap)
 {
 	let alan = pi * Math.pow(yaricap,2)
@@ -79,38 +79,85 @@ console.log(CemberinAlani(15))
 	
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
 
-
+//console.log(sayilar.length);
 
 	var ucetambolunenler, enkucuk, enbuyuk, ucebolunenlerintoplami, besyuzdenkucuksayilar, siralisayilar, tekraredensayilar;
 	
 	//3a çözümü
 
-	/* kodlar buraya */
-	
+enbuyuk = sayilar[0];
+for ( let i =0 ; i<sayilar.length; i++)
+{
+if( sayilar[i] > enbuyuk)
+{
+	enbuyuk =sayilar[i]
+}
+}
+console.log(enbuyuk)	
+
+enkucuk = sayilar[0];
+for ( let i =0 ; i<sayilar.length; i++)
+{
+if (sayilar[i] < enkucuk)
+{
+	enkucuk = sayilar[i]
+}
+}
+console.log(enkucuk)
 	
 	
 	// 3b çözümü:
+	var ucetambolunenler = [];
+	
+	sayilar.forEach(function(sayi) 
+	{
+		if (sayi % 3 == 0) 
+		{
+			return ucetambolunenler.push(sayi)
+		} 
+	}
+	);
 
-	/* kodlar buraya */
-		
-		
+	console.log(ucetambolunenler)
+
+
 		
 	//3c çözümü:
 	
-	/* kodlar buraya */
+	
+	ucebolunenlerintoplami = ucetambolunenler.reduce(function(total,sayi) //sayi = dizideki ilk rakam //total =0
+	{
+return total + sayi ;
+	}
+	)
+	console.log(ucebolunenlerintoplami)
+	
 
 	
 	
 	//3d çözümü
 	
-	/* kodlar buraya */
-
+	
+besyuzdenkucuksayilar = sayilar.filter(function(sayi)
+	{
+if ( sayi < 500)
+{
+	return sayi
+}
+	}
+	)
+	console.log(besyuzdenkucuksayilar)
+	
 
 
 	//3e çözümü
 
-	/* kodlar buraya */
-	
+siralisayilar = besyuzdenkucuksayilar.sort(function(a,b)
+{
+return a-b
+}
+)
+console.log(siralisayilar)
 	
 	//3f çözümü
 	
